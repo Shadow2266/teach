@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>影子老師的教學平台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- 導覽列 -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold text-indigo-600">影子老師</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#about" class="px-3 py-2 rounded-md text-sm font-medium hover:text-indigo-600 transition">關於我</a>
+                        <a href="#prep" class="px-3 py-2 rounded-md text-sm font-medium hover:text-indigo-600 transition">課程準備</a>
+                        <a href="#interact" class="px-3 py-2 rounded-md text-sm font-medium hover:text-indigo-600 transition">課堂互動</a>
+                        <a href="#examples" class="px-3 py-2 rounded-md text-sm font-medium hover:text-indigo-600 transition">教學範例</a>
+                        <a href="#tools" class="px-3 py-2 rounded-md text-sm font-medium hover:text-indigo-600 transition">常用工具</a>
+                    </div>
+                </div>
+                <!-- 行動裝置選單按鈕 -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 行動裝置選單 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">關於我</a>
+                <a href="#prep" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">課程準備</a>
+                <a href="#interact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">課堂互動</a>
+                <a href="#examples" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">教學範例</a>
+                <a href="#tools" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">常用工具</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主視覺區 -->
+    <header class="pt-32 pb-16 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4">影子老師的教學平台</h1>
+            <p class="text-xl md:text-2xl text-indigo-100 max-w-2xl mx-auto">
+                整合 AI 工具、互動資源與實戰範例，為教育者打造的高效教學中心。
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- 關於我 -->
+        <section id="about" class="mb-20">
+            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100 flex flex-col md:flex-row items-center gap-8">
+                <!-- 個人照片容器 -->
+                <div class="w-32 h-32 md:w-48 md:h-48 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden border-4 border-indigo-50 shadow-inner">
+                    <img src="image/shadow.jpg" alt="影子老師照片" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Shadow&background=EEF2FF&color=4F46E5&size=256';">
+                </div>
+                <div class="flex-grow text-center md:text-left">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">關於我</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        歡迎來到我的個人教學資源整合平台。在這裡，我分享多年累積的教學經驗，結合現代 AI 技術與數位工具，旨在提升教學品質並激發學生的學習興趣。
+                    </p>
+                    <a href="https://shadow2266.github.io/personal_site/" target="_blank" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition">
+                        造訪個人網站
+                        <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
+                            <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 一、課程準備 -->
+        <section id="prep" class="mb-20">
+            <div class="flex items-center mb-8">
+                <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                </div>
+                <h2 class="text-3xl font-bold">課程準備</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- 卡片 1 -->
+                <a href="https://gemini.google.com/gem/1cFBuFPnLyt7K2jMZmf733UdDUSr7bRsF?usp=sharing" target="_blank" class="block p-6 bg-white rounded-xl border border-gray-100 card-hover transition-all">
+                    <h3 class="text-xl font-bold mb-2 text-indigo-600">簡報產生器</h3>
+                    <p class="text-gray-500 text-sm">快速生成教學內容大綱與簡報邏輯。</p>
+                </a>
+                <!-- 卡片 2 -->
+                <a href="https://gemini.google.com/share/d92bb2d65e9d" target="_blank" class="block p-6 bg-white rounded-xl border border-gray-100 card-hover transition-all">
+                    <h3 class="text-xl font-bold mb-2 text-indigo-600">Nano Banana 指令畫廊</h3>
+                    <p class="text-gray-500 text-sm">探索與參考 AI 繪圖指令的靈感來源。</p>
+                </a>
+                <!-- 卡片 3 -->
+                <a href="https://nnbnn.netlify.app/?fbclid=Iwb21leAOziSVjbGNrA7OJIGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHgnyzJFhKbyHdZLN6orFnea0RSa7xZN-j3v9o-SEr0yNhtid7j3fLGEGU9a2_aem_9ssjnwhitGshpIsa-9BjKA" target="_blank" class="block p-6 bg-white rounded-xl border border-gray-100 card-hover transition-all">
+                    <h3 class="text-xl font-bold mb-2 text-indigo-600">Nano Banana 繪圖指令</h3>
+                    <p class="text-gray-500 text-sm">精確的繪圖提示詞參考手冊。</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- 二、課堂互動 -->
+        <section id="interact" class="mb-20">
+            <div class="flex items-center mb-8">
+                <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                </div>
+                <h2 class="text-3xl font-bold">課堂互動</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <a href="https://yl2005us-bit.github.io/Sampling-Grouping/" target="_blank" class="flex flex-col p-8 bg-indigo-50 rounded-2xl border-2 border-indigo-100 hover:border-indigo-300 transition-all group">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-indigo-900">幸運分組</h3>
+                        <span class="bg-white text-indigo-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">線上工具</span>
+                    </div>
+                    <p class="text-indigo-700 mb-6 flex-grow">快速公平的課堂分組與抽籤系統，增加課堂趣味性。</p>
+                    <div class="text-indigo-600 font-semibold group-hover:translate-x-2 transition-transform inline-flex items-center">
+                        立即使用
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </div>
+                </a>
+                <a href="https://yl2005us-bit.github.io/class/" target="_blank" class="flex flex-col p-8 bg-emerald-50 rounded-2xl border-2 border-emerald-100 hover:border-emerald-300 transition-all group">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-emerald-900">課堂作業繳交平台</h3>
+                        <span class="bg-white text-emerald-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">教學管理</span>
+                    </div>
+                    <p class="text-emerald-700 mb-6 flex-grow">簡便、直覺的數位作業收集與管理中心。</p>
+                    <div class="text-emerald-600 font-semibold group-hover:translate-x-2 transition-transform inline-flex items-center">
+                        進入平台
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- 三、教學範例 -->
+        <section id="examples" class="mb-20 bg-gray-100 -mx-4 sm:-mx-8 px-4 sm:px-8 py-12 rounded-3xl">
+            <div class="flex items-center mb-8">
+                <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900">教學範例</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- 範例 1 -->
+                <a href="https://gemini.google.com/share/d1479f8c73c8" target="_blank" class="bg-white p-6 rounded-xl shadow-sm border border-transparent hover:border-purple-200 transition-all flex flex-col">
+                    <div class="text-xs font-bold text-purple-500 mb-2">資訊工程 / AI 應用</div>
+                    <h4 class="text-lg font-bold mb-3">資訊安全遊戲式學習範例</h4>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">透過互動遊戲引導學生理解複雜的資安觀念。</p>
+                    <span class="text-purple-600 text-sm font-semibold inline-flex items-center">查看範例 <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg></span>
+                </a>
+                <!-- 範例 2 -->
+                <a href="https://gemini.google.com/share/0f01fd2b6217" target="_blank" class="bg-white p-6 rounded-xl shadow-sm border border-transparent hover:border-purple-200 transition-all flex flex-col">
+                    <div class="text-xs font-bold text-purple-500 mb-2">醫療護理 / 專業發展</div>
+                    <h4 class="text-lg font-bold mb-3">臨床護理反思引導系統</h4>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">利用引導式對話增進醫護人員的反思力與專業性。</p>
+                    <span class="text-purple-600 text-sm font-semibold inline-flex items-center">查看範例 <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg></span>
+                </a>
+                <!-- 範例 3 -->
+                <a href="https://gemini.google.com/share/a77285466b6d" target="_blank" class="bg-white p-6 rounded-xl shadow-sm border border-transparent hover:border-purple-200 transition-all flex flex-col">
+                    <div class="text-xs font-bold text-purple-500 mb-2">公共衛生 / 健康教育</div>
+                    <h4 class="text-lg font-bold mb-3">糖尿病衛教遊戲：食物九宮格大富翁</h4>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">趣味化醫療衛教，讓病友在遊戲中掌握飲食重點。</p>
+                    <span class="text-purple-600 text-sm font-semibold inline-flex items-center">查看範例 <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg></span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 四、常用工具 -->
+        <section id="tools">
+            <div class="flex items-center mb-8">
+                <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
+                    <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </div>
+                <h2 class="text-3xl font-bold">常用工具</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- 1. AI 工具 -->
+                <div>
+                    <h3 class="text-xl font-bold text-gray-700 mb-6 flex items-center">
+                        <span class="w-1.5 h-6 bg-orange-400 rounded-full mr-3"></span>
+                        AI 工具
+                    </h3>
+                    <div class="space-y-4">
+                        <a href="https://gamma.app/signin" target="_blank" class="flex items-center p-4 bg-white rounded-lg border border-gray-100 hover:shadow-md transition">
+                            <div class="bg-gray-50 p-2 rounded mr-4">🤖</div>
+                            <div>
+                                <h4 class="font-bold">AI 簡報工具 (Gamma)</h4>
+                                <p class="text-xs text-gray-500">一鍵將文字轉為精美簡報。</p>
+                            </div>
+                        </a>
+                        <a href="https://v2.chateverywhere.app/zh/meeting-transcription" target="_blank" class="flex items-center p-4 bg-white rounded-lg border border-gray-100 hover:shadow-md transition">
+                            <div class="bg-gray-50 p-2 rounded mr-4">🎙️</div>
+                            <div>
+                                <h4 class="font-bold">會議記錄小幫手</h4>
+                                <p class="text-xs text-gray-500">高效轉錄會議語音為文字紀錄。</p>
+                            </div>
+                        </a>
+                        <a href="https://deckedit.com/zh-Hant" target="_blank" class="flex items-center p-4 bg-white rounded-lg border border-gray-100 hover:shadow-md transition">
+                            <div class="bg-gray-50 p-2 rounded mr-4">📄</div>
+                            <div>
+                                <h4 class="font-bold">PDF 轉 PPT (DeckEdit)</h4>
+                                <p class="text-xs text-gray-500">將靜態文件重新賦予簡報活力。</p>
+                            </div>
+                        </a>
+                        <a href="https://smallpdf.com/zh-TW/pdf-to-ppt#r=convert-to-powerpoint" target="_blank" class="flex items-center p-4 bg-white rounded-lg border border-gray-100 hover:shadow-md transition">
+                            <div class="bg-gray-50 p-2 rounded mr-4">🔄</div>
+                            <div>
+                                <h4 class="font-bold">檔案轉換器 (SmallPDF)</h4>
+                                <p class="text-xs text-gray-500">多功能的 PDF 轉換與處理利器。</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2. 多用途工具 -->
+                <div>
+                    <h3 class="text-xl font-bold text-gray-700 mb-6 flex items-center">
+                        <span class="w-1.5 h-6 bg-blue-400 rounded-full mr-3"></span>
+                        多用途工具
+                    </h3>
+                    <div class="space-y-4">
+                        <a href="https://www.jotform.com/workspace/" target="_blank" class="flex items-center p-4 bg-white rounded-lg border border-gray-100 hover:shadow-md transition">
+                            <div class="bg-gray-50 p-2 rounded mr-4">📝</div>
+                            <div>
+                                <h4 class="font-bold">Jotform</h4>
+                                <p class="text-xs text-gray-500">強大的線上表單與問卷收集系統。</p>
+                            </div>
+                        </a>
+                        <a href="https://miro.com/login/" target="_blank" class="flex items-center p-4 bg-white rounded-lg border border-gray-100 hover:shadow-md transition">
+                            <div class="bg-gray-50 p-2 rounded mr-4">🎨</div>
+                            <div>
+                                <h4 class="font-bold">Miro</h4>
+                                <p class="text-xs text-gray-500">無限大的視覺協作白板，適合遠端教學。</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl font-bold text-white mb-4">影子老師的教學平台</h2>
+            <p class="mb-8">持續優化教育科技，讓教學更輕鬆，學習更有趣。</p>
+            <div class="pt-8 border-t border-gray-800">
+                <p>&copy; 2024 影子老師教學平台. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 行動裝置選單控制
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 點擊選單連結後自動關閉行動選單
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 平滑捲動補充 (針對某些瀏覽器)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80, // Offset for fixed nav
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
